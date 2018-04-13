@@ -9,16 +9,16 @@
   </p>
   <h4>Button clicks</h4>
   <ul>
-    <li *ngFor="let count of buttonCount">
+    <li *ngFor="let count of buttonCount; let i = index">
       <p *ngIf="count < 5; else coloredP">
-        {{ count }}
+        {{ count }} {{ i }}
       </p>
       <ng-template #coloredP>
         <p
         [ngStyle]="{'backgroundColor': 'blue'}"
         [ngClass]="'color'"
         >
-        {{ count }}
+        {{ count }} {{ i }}
       </p>
       </ng-template>
     </li>
