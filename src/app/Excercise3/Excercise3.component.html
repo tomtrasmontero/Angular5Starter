@@ -1,0 +1,26 @@
+<div>
+  <button
+    class="btn btn-primary"
+    (click)="toggleParagraph()"
+  >Display Details
+  </button>
+  <p *ngIf="showParagraph">
+    Secret Password = tuna
+  </p>
+  <h4>Button clicks</h4>
+  <ul>
+    <li *ngFor="let count of buttonCount">
+      <p *ngIf="count < 5; else coloredP">
+        {{ count }}
+      </p>
+      <ng-template #coloredP>
+        <p
+        [ngStyle]="{'backgroundColor': 'blue'}"
+        [ngClass]="'color'"
+        >
+        {{ count }}
+      </p>
+      </ng-template>
+    </li>
+  </ul>
+</div>
